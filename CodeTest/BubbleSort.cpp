@@ -23,14 +23,14 @@ int main(){
 
     int N;
     cin >> N; // N입력 
-    vector<pair<int,int>> A(N); // 벡터에 인덱스를 사용하기 위해 pair를 사용. 
+    vector<pair<int,int>> A(N); // 벡터에 인덱스를 사용하기 위해 pair를 사용. (인덱스 값이 변경되는 것이 민감할 경우 해당 내용 처럼 이차원 배열을 사용해도 됨!)
 
     for(int i = 0 ; i < N ; i++){
         cin >> A[i].first;
         A[i].second = i; // 인덱스 값
     }
 
-    sort(A.begin(), A.end()); // 정렬 
+    sort(A.begin(), A.end()); // 오름차순 정렬  
 
     int Max = 0; 
     for(int i = 0; i < N ; i++){
@@ -41,5 +41,5 @@ int main(){
 
     }
 
-    cout << Max + 1 << endl;
+    cout << Max + 1 << endl; // +1 인 이유는 swap 이 일어나지 않는 반복문이 한 번 더 실행되는 것을 감안해 최대값이 1을 더하는 것. 
 }
